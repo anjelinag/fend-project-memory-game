@@ -102,6 +102,7 @@ function updateTime() {
 
 
 togglemodal();
+shuffleDeckHTML();//Deck should be reshuffled on browser reload
 
 clickedCards = []
 moves = 0
