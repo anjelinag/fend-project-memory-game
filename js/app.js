@@ -15,7 +15,8 @@ function replay() {
 	document.querySelector('.modalreplay').addEventListener('click',() => {
     	resetGame();
     	togglemodal();
-	}); 
+			shuffleDeckHTML();//Shuffle deck if replaying
+	});
 
 }
 
@@ -37,7 +38,7 @@ function ratePlayer(moves) {
 }
 
 function formatTimer(seconds) {
-	
+
 	if(seconds<10) {
 		return `Time - 0:0${seconds}`
 	}
@@ -79,11 +80,12 @@ function resetGame() {
 	document.querySelector('.timer').innerHTML = formatTimer(0);
 	clickCounter = 0;
 	timer = 0;
-	const stars = document.getElementsByClassName('fa-star-o');
+	// Reset stars before replaying
+	const stars = document.querySelectorAll('.fa-star-o');
+
 	for(let i of stars){
 		i.classList.remove('fa-star-o');
 	}
-	shuffleDeckHTML();
 }
 
 function togglemodal(){
@@ -91,7 +93,7 @@ function togglemodal(){
 	modal.classList.toggle('hide');
 }
 
-function updateTime() { 
+function updateTime() {
 	timer++;
 	// document.querySelector('.timer').innerHTML = `Time ${timer}` ;
 	document.querySelector('.timer').innerHTML = formatTimer(timer);
@@ -105,11 +107,11 @@ moves = 0
 
 let refresh = document.getElementsByClassName('fa-repeat');
 
-refresh[0].addEventListener('click', function() { 
+refresh[0].addEventListener('click', function() {
 	resetGame();
 	shuffleDeckHTML();
 });
-// setting a global variable for Timer 
+// setting a global variable for Timer
 let timer = 0;
 
 let clickCounter = 0;
@@ -126,12 +128,12 @@ function clickHandler() {
 	  	clickCounter++;
 
 	  	if(clickCounter==1) { startTimer = setInterval( updateTime, 1000);}
-	  	
+
 	  	let flippedCards = document.getElementsByClassName('show','open');
 
 	  	if (target.classList.contains('card') && flippedCards.length < 2 ) {
 	    	target.classList.add('show');
-	    	target.classList.add('open'); 
+	    	target.classList.add('open');
 
 	    	matches = document.getElementsByClassName('match');
 
@@ -174,7 +176,7 @@ function clickHandler() {
 						}
 						setTimeout(congratulate, 500);
 					} else {
-							function flipCards() { 
+							function flipCards() {
 								console.log(clickedCards);
 								clickedCards[0].classList.remove('open','show');
 								clickedCards[1].classList.remove('open','show');
