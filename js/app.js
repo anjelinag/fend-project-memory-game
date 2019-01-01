@@ -27,10 +27,8 @@ function addStarsToModal(){
 
 function ratePlayer(moves) {
 	if(moves===24) {
-		// document.getElementsByClassName('fa-star')[2].style.display='none';
 		document.getElementsByClassName('fa-star')[2].classList.add('fa-star-o');
 	} else if(moves===32) {
-		// document.getElementsByClassName('fa-star')[1].style.display='none';
 		document.getElementsByClassName('fa-star')[1].classList.add('fa-star-o');
 	} else if(moves===40){
 		document.getElementsByClassName('fa-star')[0].classList.add('fa-star-o');
@@ -71,7 +69,7 @@ function shuffleDeckHTML() {
 function resetGame() {
 	const cards = document.getElementsByClassName('card');
 	const moveElement = document.getElementsByClassName('moves');
-//User may choose to reset game after a single click or after flipping a single card
+	//User may choose to reset game after a single click or after flipping a single card
 	for (let c of cards) {
 		c.classList.remove('match', 'show','open');
 	}
@@ -96,7 +94,6 @@ function togglemodal(){
 
 function updateTime() {
 	timer++;
-	// document.querySelector('.timer').innerHTML = `Time ${timer}` ;
 	document.querySelector('.timer').innerHTML = formatTimer(timer);
 }
 
@@ -138,11 +135,6 @@ function clickHandler() {
 	    	target.classList.add('open');
 
 	    	matches = document.getElementsByClassName('match');
-
-	  //   	if(matches.length==16) {
-			// 	alert("Congratulations!");
-			// }
-
 	    	if (!clickedCards.includes(target)) {
 	    		clickedCards.push(target);
 	    		moves = moves + 1;
@@ -160,16 +152,12 @@ function clickHandler() {
 						clickedCards[0].classList.remove('show', 'open');
 						clickedCards[1].classList.remove('show', 'open');
 						clickedCards = []
-						// matches = document.getElementsByClassName('match');
-
 				    	function congratulate() {
 				    		if(matches.length==16) {
-								//alert("Congratulations!");
 								clearInterval(startTimer);
 								const a = document.querySelector('.modalmoves');
 								a.innerHTML = `Moves - ${moves}`;
 								const b = document.querySelector('.modaltime');
-								// b.innerHTML = `Time - ${timer}`
 								b.innerHTML = formatTimer(timer);
 								addStarsToModal();
 								togglemodal();
