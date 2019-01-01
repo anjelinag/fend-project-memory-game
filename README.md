@@ -1,20 +1,23 @@
 # Memory Game Project
+## Game dependencies 
+- Font awesome 
+- Google Fonts
+- Bootstrap
+- JavaScript 
 
-## Table of Contents
+## How to play
+1. Clone the repository on your machine
+2. Open index.html on your browser. 
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
 
-## Instructions
+## Instructions to play 
+All cards have a match and once you click the first card the timer, move and star will start counting.
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Your moves will be counted if you match the cards with less than 24 clicks it will give you three stars. 
 
-To get started, open `js/app.js` and start building out the app's functionality
+If your move is between 24 and 32 you will have 2 stars. 
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+If your move is between 32 to 40 you will have 1 stars. Moves that are more than 40 will get 0 star. 
 
-## Contributing
+You can restart the game using the reset button at any time. To replay after you matched all the cards you can click the replay button.
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
