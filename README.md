@@ -11,7 +11,11 @@
 
 
 ## Instructions to play 
-All cards have a match and once you click the first card the timer, move and star will start counting.
+All cards have a match. Once you click the first card, the following  will start counting.
+ 
+ *	number of moves
+ * 	timer
+ *  number of stars
 
 Your moves will be counted if you match the cards with less than 24 clicks it will give you three stars. 
 
