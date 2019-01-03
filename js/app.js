@@ -28,10 +28,8 @@ function addStarsToModal(){
 function ratePlayer(moves) {
 	if(moves===24) {
 		document.getElementsByClassName('fa-star')[2].classList.add('fa-star-o');
-	} else if(moves===32) {
+	} else if(moves===40) {
 		document.getElementsByClassName('fa-star')[1].classList.add('fa-star-o');
-	} else if(moves===40){
-		document.getElementsByClassName('fa-star')[0].classList.add('fa-star-o');
 	}
 }
 
